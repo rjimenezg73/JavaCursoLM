@@ -4,6 +4,8 @@
  */
 package com.mycompany.sistemagestion;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author macbook
@@ -26,31 +28,55 @@ public class Formulario extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
-    jButton1 = new javax.swing.JButton();
+    btnCalcular = new javax.swing.JButton();
+    txtNombre = new javax.swing.JTextField();
+    jLabel1 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-    jButton1.setText("jButton1");
+    btnCalcular.setText("Calcular");
+    btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnCalcularActionPerformed(evt);
+      }
+    });
+
+    jLabel1.setText("Nombre:");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addGap(235, 235, 235)
-        .addComponent(jButton1)
-        .addContainerGap(404, Short.MAX_VALUE))
+        .addGap(63, 63, 63)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+          .addComponent(btnCalcular)
+          .addGroup(layout.createSequentialGroup()
+            .addComponent(jLabel1)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addContainerGap(260, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-        .addContainerGap(316, Short.MAX_VALUE)
-        .addComponent(jButton1)
-        .addGap(133, 133, 133))
+        .addGap(83, 83, 83)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel1)
+          .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(37, 37, 37)
+        .addComponent(btnCalcular)
+        .addContainerGap(306, Short.MAX_VALUE))
     );
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+    // TODO add your handling code here:
+    String varNombre = this.txtNombre.getText();
+    JOptionPane.showMessageDialog(rootPane, "Bienvenido " + varNombre);
+  }//GEN-LAST:event_btnCalcularActionPerformed
 
   /**
    * @param args the command line arguments
@@ -88,6 +114,8 @@ public class Formulario extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton jButton1;
+  private javax.swing.JButton btnCalcular;
+  private javax.swing.JLabel jLabel1;
+  private javax.swing.JTextField txtNombre;
   // End of variables declaration//GEN-END:variables
 }
